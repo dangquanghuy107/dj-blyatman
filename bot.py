@@ -69,7 +69,7 @@ class MusicCog(commands.Cog):
         async with ctx.typing(): 
             data = await YoutubeAudioSource.get(text, loop=self.bot.loop, data_only=True)
             data["title"] = normalize(data["tilte"])
-            
+
         is_playing = ctx.voice_client.is_playing()
 
         if is_playing:
@@ -141,4 +141,4 @@ class MusicCog(commands.Cog):
 
 
 bot.add_cog(MusicCog(bot))
-bot.run('ODk0MTU0ODI0ODY4ODQ3NjM2.YVl4kg.ckYEP6jqfsz1t4zO9vSC_y2jmIU')
+bot.run(YOUR_TOKEN)
