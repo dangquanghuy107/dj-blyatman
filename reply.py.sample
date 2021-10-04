@@ -1,0 +1,7 @@
+PLAY_NO_URL_OR_TEXT = 'Đéo cho bố mày keyword hay URL thì bố mày phát kiểu lồn gì thằng ngu này'
+PLAY_ADD_TO_QUEUE = 'Vội ăn lồn à. Đợi tí nốt bài bố phát cho.'
+PLAY_NO_CHANNEL = 'Vào voice channel rồi mới nghe được nhạc chứ :smirk: Ngu vkl :brain: :dog:'
+PLAY_OK = 'Nhạc đây thưa ngài :notes:: ' 
+STOP = 'Bật lên xong đéo nghe cái đcmm à'
+STOP_NO_MUSIC = 'Nhạc có bật lồn đâu mà tắt'
+EXCEPTION = 'Bị lỗi đéo gì này: '
