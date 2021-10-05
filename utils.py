@@ -16,17 +16,11 @@ ydl = youtube_dl.YoutubeDL({
 youtube_url_regex = '^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$'
 youtube_pattern = re.compile(youtube_url_regex)
 
-def normalize_name(input_str):
-    s1 = u' ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹ'
-    s0 = u' AAAAEEEIIOOOOUUYaaaaeeeiioooouuyAaDdIiUuOoUuAaAaAaAaAaAaAaAaAaAaAaAaEeEeEeEeEeEeEeEeIiIiOoOoOoOoOoOoOoOoOoOoOoOoUuUuUuUuUuUuUuYyYyYyYy'
-    s = ''
-    remove_specialCharacter = ''.join(e for e in input_str if e.isalnum())
-    for c in remove_specialCharacter:
-        if c in s1:
-            s += s0[s1.index(c)]
-        else:
-            s += c
-    return s
+redis_client = redis.Redis(charset='utf8', decode_responses=True)
+
+def normalize_name(input_str: str) -> str:
+    output_str = input_str.replace('`', '')
+    return output_str
 
 
 def insult_factory(name): 

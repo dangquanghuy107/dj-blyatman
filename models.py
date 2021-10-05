@@ -4,13 +4,13 @@ import redis
 
 import json
 
-from youtube_dl.utils import US_RATINGS
+from music_bot.utils import redis_client
 from music_bot.config import MUSIC_QUEUE
 
 
 class RedisQueue(object): 
     def __init__(self):
-        self.client = redis.Redis() 
+        self.client = redis_client
     
     def push(self, message: str) -> None:
         self.client.rpush(MUSIC_QUEUE, message)
@@ -33,3 +33,5 @@ class RedisQueue(object):
 
     def is_empty(self) -> bool: 
         return self.size() == 0 
+
+
