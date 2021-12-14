@@ -8,11 +8,11 @@ from discord import channel
 from discord import player
 from discord.ext import commands
 
-from music_bot.utils import (ydl, youtube_pattern, insult_factory, normalize_name,
+from utils import (ydl, youtube_pattern, insult_factory, normalize_name,
                             redis_client)
-from music_bot.models import RedisQueue
-from music_bot.reply import * 
-from music_bot.config import TOKEN, LOG_LEVEL
+from models import RedisQueue
+from reply import * 
+from config import TOKEN, LOG_LEVEL
 
 logging.basicConfig(level=LOG_LEVEL)
 bot = commands.Bot(command_prefix=commands.when_mentioned_or("."), description=BOT_DESCRIPTION)
