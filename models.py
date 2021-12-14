@@ -4,8 +4,8 @@ import redis
 
 import json
 
-from music_bot.utils import redis_client
-from music_bot.config import MUSIC_QUEUE
+from utils import redis_client
+from config import MUSIC_QUEUE
 
 
 class RedisQueue(object): 
